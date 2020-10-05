@@ -2,7 +2,7 @@ import React from 'react';
 import TestButton from './TestButton';
 
 export default {
-    title: 'TestButton',
+    title: 'Form/Control/TestButton',
     component: TestButton,
 };
 
