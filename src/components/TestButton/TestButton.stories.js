@@ -4,11 +4,35 @@ import TestButton from './TestButton';
 export default {
     title: 'Form/Control/TestButton',
     component: TestButton,
+    args: {
+        children: 'Button',
+    },
 };
 
-export const Primary = () => <TestButton variant="primary">Primary</TestButton>;
-export const Secondary = () => (
-    <TestButton variant="secondary">Secondary</TestButton>
-);
-export const Success = () => <TestButton variant="success">Success</TestButton>;
-export const Danger = () => <TestButton variant="danger">Danger</TestButton>;
+const Template = args => <TestButton {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    variant: 'primary',
+};
+
+export const LongPrimary = Template.bind({});
+LongPrimary.args = {
+    ...Primary.args,
+    children: 'Long Primary Args',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    variant: 'secondary',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+    variant: 'success',
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+    variant: 'danger',
+};
