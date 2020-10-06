@@ -1,6 +1,7 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import Center from '../src/components/Center/Center';
+import { ThemeProvider, theme, CSSReset } from '@chakra-ui/core';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,4 +14,14 @@ export const parameters = {
 };
 
 // decorators are a components that wrap a story
-addDecorator(story => <Center>{story()}</Center>);
+
+export const decorators = [
+    Story => (
+        <ThemeProvider theme={theme}>
+            <CSSReset />
+            <Center>
+                <Story />
+            </Center>
+        </ThemeProvider>
+    ),
+];
