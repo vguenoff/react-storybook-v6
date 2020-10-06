@@ -1,5 +1,6 @@
 import React from 'react';
 import TestButton from './TestButton';
+// import Center from '../Center/Center';
 
 export default {
     title: 'Form/Control/TestButton',
@@ -7,6 +8,7 @@ export default {
     args: {
         children: 'Button',
     },
+    // decorators: [story => <Center>{story()}</Center>],
 };
 
 const Template = args => <TestButton {...args} />;
