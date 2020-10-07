@@ -4,6 +4,7 @@ import { ThemeProvider, theme, CSSReset } from '@chakra-ui/core';
 import '@storybook/addon-console';
 import { addDecorator } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
+import { withA11y } from '@storybook/addon-a11y';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -29,3 +30,4 @@ export const decorators = [
 ];
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
+addDecorator(withA11y);
